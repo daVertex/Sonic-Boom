@@ -4378,6 +4378,184 @@ local Button = EventTab:CreateButton({
         end
     end,
 })
+local EventSection = EventTab:CreateSection("Maculite Layer:")
+local Button = EventTab:CreateButton({
+    Name = "Silt",
+    Callback = function()
+        local ReplicatedStorage = game:GetService("ReplicatedStorage")
+        local Workspace = game:GetService("Workspace")-- services 
+        
+        
+        local mineOreFunction = ReplicatedStorage:FindFirstChild("MineOre")
+        
+        local specificOres = {"Silt"}
+        
+        if mineOreFunction and mineOreFunction:IsA("RemoteFunction") then
+            local function mineOre(ore)
+                if ore and ore.Name then
+                    if table.find(specificOres, ore.Name) then
+                        local success, result = pcall(function()
+                            return mineOreFunction:InvokeServer(ore)
+                        end)
+                        if success then
+                            if result then
+                                print("Successfully mined ore:", ore.Name)
+                            else
+                                warn("Failed to mine ore:", ore.Name)
+                            end
+                        else
+                            warn("Error invoking MineOre RemoteFunction:", result)
+                        end
+                    end
+                else
+                    warn("Ore not found or missing name")
+                end
+            end
+            while true do
+                for _, ore in pairs(Workspace.Mine:GetChildren()) do
+                    mineOre(ore)
+                end
+                wait(0.1)  
+            end
+        else
+            warn("MineOre RemoteFunction not found in ReplicatedStorage.")
+        end
+    end,
+})
+local Button = EventTab:CreateButton({
+    Name = "Glass",
+    Callback = function()
+        local ReplicatedStorage = game:GetService("ReplicatedStorage")
+        local Workspace = game:GetService("Workspace")-- services 
+        
+        
+        local mineOreFunction = ReplicatedStorage:FindFirstChild("MineOre")
+        
+        local specificOres = {"Glass"}
+        
+        if mineOreFunction and mineOreFunction:IsA("RemoteFunction") then
+            local function mineOre(ore)
+                if ore and ore.Name then
+                    if table.find(specificOres, ore.Name) then
+                        local success, result = pcall(function()
+                            return mineOreFunction:InvokeServer(ore)
+                        end)
+                        if success then
+                            if result then
+                                print("Successfully mined ore:", ore.Name)
+                            else
+                                warn("Failed to mine ore:", ore.Name)
+                            end
+                        else
+                            warn("Error invoking MineOre RemoteFunction:", result)
+                        end
+                    end
+                else
+                    warn("Ore not found or missing name")
+                end
+            end
+            while true do
+                for _, ore in pairs(Workspace.Mine:GetChildren()) do
+                    mineOre(ore)
+                end
+                wait(0.1)  
+            end
+        else
+            warn("MineOre RemoteFunction not found in ReplicatedStorage.")
+        end
+    end,
+})
+local EventSection = EventTab:CreateSection("Surmilum Layer:")
+local Button = EventTab:CreateButton({
+    Name = "Kyanite",
+    Callback = function()
+        local ReplicatedStorage = game:GetService("ReplicatedStorage")
+        local Workspace = game:GetService("Workspace")-- services 
+        
+        
+        local mineOreFunction = ReplicatedStorage:FindFirstChild("MineOre")
+        
+        local specificOres = {"Kyanite"}
+        
+        if mineOreFunction and mineOreFunction:IsA("RemoteFunction") then
+            local function mineOre(ore)
+                if ore and ore.Name then
+                    if table.find(specificOres, ore.Name) then
+                        local success, result = pcall(function()
+                            return mineOreFunction:InvokeServer(ore)
+                        end)
+                        if success then
+                            if result then
+                                print("Successfully mined ore:", ore.Name)
+                            else
+                                warn("Failed to mine ore:", ore.Name)
+                            end
+                        else
+                            warn("Error invoking MineOre RemoteFunction:", result)
+                        end
+                    end
+                else
+                    warn("Ore not found or missing name")
+                end
+            end
+            while true do
+                for _, ore in pairs(Workspace.Mine:GetChildren()) do
+                    mineOre(ore)
+                end
+                wait(0.1)  
+            end
+        else
+            warn("MineOre RemoteFunction not found in ReplicatedStorage.")
+        end
+    end,
+})
+
+local Button = EventTab:CreateButton({
+    Name = "Sediment",
+    Callback = function()
+        local ReplicatedStorage = game:GetService("ReplicatedStorage")
+        local Workspace = game:GetService("Workspace")-- services 
+        
+        
+        local mineOreFunction = ReplicatedStorage:FindFirstChild("MineOre")
+        
+        local specificOres = {"Sediment"}
+        
+        if mineOreFunction and mineOreFunction:IsA("RemoteFunction") then
+            local function mineOre(ore)
+                if ore and ore.Name then
+                    if table.find(specificOres, ore.Name) then
+                        local success, result = pcall(function()
+                            return mineOreFunction:InvokeServer(ore)
+                        end)
+                        if success then
+                            if result then
+                                print("Successfully mined ore:", ore.Name)
+                            else
+                                warn("Failed to mine ore:", ore.Name)
+                            end
+                        else
+                            warn("Error invoking MineOre RemoteFunction:", result)
+                        end
+                    end
+                else
+                    warn("Ore not found or missing name")
+                end
+            end
+            while true do
+                for _, ore in pairs(Workspace.Mine:GetChildren()) do
+                    mineOre(ore)
+                end
+                wait(0.1)  
+            end
+        else
+            warn("MineOre RemoteFunction not found in ReplicatedStorage.")
+        end
+    end,
+})
+
+
+
 local EventSection = EventTab:CreateSection("These pick-up everything in the layer.")
 local Button = EventTab:CreateButton({
     Name = "Spook Stone Layer",
@@ -4680,3 +4858,92 @@ local Button = EventTab:CreateButton({
         end
     end,
 })
+
+local Button = EventTab:CreateButton({
+    Name = "Maculite Layer",
+    Callback = function()
+        local ReplicatedStorage = game:GetService("ReplicatedStorage")
+        local Workspace = game:GetService("Workspace")-- services 
+        
+        
+        local mineOreFunction = ReplicatedStorage:FindFirstChild("MineOre")
+        
+        local specificOres = {"Litorelite","Scoria","Solaurum","Popsiclice","Pinappore","Fizzyglass","Incandescine","Solar Haze","Beachball","Sol","Sunshade","Dunestride","Sandstorm","Sunlypse","Sunflower","Lux Aestiva"}
+        
+        if mineOreFunction and mineOreFunction:IsA("RemoteFunction") then
+            local function mineOre(ore)
+                if ore and ore.Name then
+                    if table.find(specificOres, ore.Name) then
+                        local success, result = pcall(function()
+                            return mineOreFunction:InvokeServer(ore)
+                        end)
+                        if success then
+                            if result then
+                                print("Successfully mined ore:", ore.Name)
+                            else
+                                warn("Failed to mine ore:", ore.Name)
+                            end
+                        else
+                            warn("Error invoking MineOre RemoteFunction:", result)
+                        end
+                    end
+                else
+                    warn("Ore not found or missing name")
+                end
+            end
+            while true do
+                for _, ore in pairs(Workspace.Mine:GetChildren()) do
+                    mineOre(ore)
+                end
+                wait(0.1)  
+            end
+        else
+            warn("MineOre RemoteFunction not found in ReplicatedStorage.")
+        end
+    end,
+})
+
+local Button = EventTab:CreateButton({
+    Name = "Surmilum Layer",
+    Callback = function()
+        local ReplicatedStorage = game:GetService("ReplicatedStorage")
+        local Workspace = game:GetService("Workspace")-- services 
+        
+        
+        local mineOreFunction = ReplicatedStorage:FindFirstChild("MineOre")
+        
+        local specificOres = {"Siltstone","Hydroclase","Raydelium","Splashium","Tannimbar","Kahakaimar","Breezeflow","Mystifall","Floativite","Abyssium","Victide","Sunsurf","Nautitan","Swirlpool","The Odyssey","Frutiflux"}
+        
+        if mineOreFunction and mineOreFunction:IsA("RemoteFunction") then
+            local function mineOre(ore)
+                if ore and ore.Name then
+                    if table.find(specificOres, ore.Name) then
+                        local success, result = pcall(function()
+                            return mineOreFunction:InvokeServer(ore)
+                        end)
+                        if success then
+                            if result then
+                                print("Successfully mined ore:", ore.Name)
+                            else
+                                warn("Failed to mine ore:", ore.Name)
+                            end
+                        else
+                            warn("Error invoking MineOre RemoteFunction:", result)
+                        end
+                    end
+                else
+                    warn("Ore not found or missing name")
+                end
+            end
+            while true do
+                for _, ore in pairs(Workspace.Mine:GetChildren()) do
+                    mineOre(ore)
+                end
+                wait(0.1)  
+            end
+        else
+            warn("MineOre RemoteFunction not found in ReplicatedStorage.")
+        end
+    end,
+})
+
